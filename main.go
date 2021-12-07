@@ -30,14 +30,15 @@ func main() {
 		cmdArgs = args[1:]
 	}
 	for iteration := iterations; iteration > 0; iteration-- {
-		start := time.Now()
 		cmd := exec.Command(args[0], cmdArgs...)
 		cmd.Stdout = os.Stdout
 		cmd.Stderr = os.Stderr
+		start := time.Now()
 		if err := cmd.Run(); err != nil {
 			return
 		}
-		diff = append(diff, time.Now().Sub(start))
+		delta := time.Now().Sub(start)
+		diff = append(diff, delta)
 	}
 
 	var sum time.Duration
