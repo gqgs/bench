@@ -53,5 +53,5 @@ func main() {
 	variance /= time.Duration(iterations)
 	stdDeviation := time.Duration(math.Sqrt(float64(variance)))
 
-	fmt.Printf("\nbenchmark stats:\n iterations: %d\n mean: %v\n std deviation: %v\n", iterations, mean, stdDeviation)
+	fmt.Printf("\n\u001b[36;1mbenchmark stats\u001b[0m\n \u001b[36miterations:\u001b[0m %d\n \u001b[36mmean:\u001b[0m %v\n \u001b[36mstd deviation:\u001b[0m %v\n", iterations, mean, stdDeviation)
 }
